@@ -1,0 +1,22 @@
+* c:\fossee\esim\library\subcircuitlibrary\ce\ce.cir
+
+q1  net-_c2-pad2_ net-_c3-pad1_ net-_c1-pad1_ bc547
+r1  net-_r1-pad1_ net-_c2-pad2_ 2.2k
+r4  net-_c1-pad1_ ac 1.2k
+r2  net-_r1-pad1_ net-_r2-pad2_ 910k
+r3  net-_r2-pad2_ ac 220k
+c3  net-_c3-pad1_ ? 5u
+c2  net-_c2-pad1_ net-_c2-pad2_ 10u
+c1  net-_c1-pad1_ ac 20u
+r5  net-_c2-pad1_ ac 1k
+v1 net-_c2-pad1_ ac  dc 0
+v1  net-_r1-pad1_ gnd 15v
+.ac lin 10 1Hz 100Hz
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+.endc
+.end
